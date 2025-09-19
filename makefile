@@ -5,5 +5,10 @@ run:
 
 test:
 	gcc -o testEXE test.c
-	./testEXE
+	time ./testEXE
 	rm testEXE
+
+hugeTest:
+	gcc -o TEST base.c
+	time ./TEST < teste_grande.txt
+	rm TEST

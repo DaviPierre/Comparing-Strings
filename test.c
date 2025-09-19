@@ -7,7 +7,7 @@
 
 
 void run_test(const char *s1, const char *s2, int expected_dist, double expected_sim) {
-    int dist = levenshtein(s1, s2);
+    int dist = levenshtein_classic(s1, s2);
     double sim = similarity(s1, s2);
 
     printf("Testando: %s vs %s\n", s1, s2);
@@ -15,7 +15,7 @@ void run_test(const char *s1, const char *s2, int expected_dist, double expected
     printf("Obtido  : dist=%d, sim=%.2f\n", dist, sim);
 
     assert(dist == expected_dist);
-    // margem pequena para comparação de ponto flutuante
+
     assert((sim - expected_sim < 0.01) && (expected_sim - sim < 0.01));
 
     printf("✔ Teste passou!\n\n");

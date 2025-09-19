@@ -8,15 +8,20 @@
 
 // Programa principal
 int main() {
-    char str1[100], str2[100];
+    char *s1 = NULL, *s2 = NULL;
+    size_t len = 0;
 
-    printf("Digite a primeira string: ");
-    scanf("%99s", str1);
-    printf("Digite a segunda string: ");
-    scanf("%99s", str2);
+    printf("Digite a primeira string:\n");
+    getline(&s1, &len, stdin);
+    s1[strcspn(s1, "\n")] = 0;
 
-    int dist = levenshtein(str1, str2);
-    double sim = similarity(str1, str2);
+    len = 0;
+    printf("Digite a segunda string:\n");
+    getline(&s2, &len, stdin);
+    s2[strcspn(s2, "\n")] = 0;
+
+    int dist = levenshtein_classic(s1, s2);
+    double sim = similarity(s1, s2);
 
     printf("\nDistancia de Levenshtein: %d\n", dist);
     printf("Similaridade: %.2f\n", sim);

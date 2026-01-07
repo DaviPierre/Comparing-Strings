@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "levenshtein.c"
+#include "levenshteinLinear.c"
 #include "similarity.c"
 
 int main() {
@@ -25,7 +25,7 @@ int main() {
     }
     s2[strcspn(s2, "\n")] = 0;
 
-    int dist = levenshtein(s1, s2);
+    int dist = levenshtein_classic(s1, s2);
 
     double sim = similarity(dist, s1, s2);
 

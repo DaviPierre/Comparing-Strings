@@ -1,0 +1,19 @@
+
+// sem garantia de matriz na mesma posição de memória
+// Declarar as matrizes com duas dimençẽos para que o compilador acesse com um acesso [coisa horrivel de escrever]
+// matriz[i * len + j] lineriazacao de matriz
+//
+// Wave front [melhor]
+// Eu estava fazendo em blocos, muito comum e a gpu te obriga a fazer isso por velocidade
+// - CUDA +++PARALELISMO Vamo de threads :)
+//
+// Intel Gaudi (Acelerador Intel)
+//
+// O QUE FAZER
+// 	Fazer o padrao WaveFront com as instrucoes de simd para que eu possa programar na intel
+// 	https://en.wikipedia.org/wiki/Single_instruction,_multiple_data (pagina para estudo de simd)
+//
+// DEPOIS: 
+// 	Comparar o resultado em cuda
+// 	ou COMPARAR O RESULTADO EM GAUDI
+//
